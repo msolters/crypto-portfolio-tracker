@@ -1,0 +1,14 @@
+{
+  "name": "crypto-portfolio-tracker",
+  "version": "1.0.0",
+  "description": "Get the current value of your crypto holdings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark Solters",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}

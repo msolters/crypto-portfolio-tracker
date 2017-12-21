@@ -35,6 +35,9 @@ function compute_portfolio() {
           })
         }
       })
+      .catch( (error) => {
+        reject(error)
+      })
     }
   })
 }
@@ -43,5 +46,8 @@ setInterval( () => {
   compute_portfolio()
   .then( (portfolio) => {
     console.log(`Return:\t\t$${portfolio.return.toFixed(2)}\t(${portfolio.performance.toFixed(2)}%)`)
+  })
+  .catch( (error) => {
+    console.log(`Encountered error: `, error)
   })
 }, 10000)

@@ -27,6 +27,7 @@ function compute_portfolio() {
         let coin_value = parseFloat(coin_data.price_usd) * holdings.crypto[coin]
         coins[coin_data.symbol].coin_value = coin_value
         total_portfolio_value += coin_value
+        total_portfolio_value += holdings.usd
         if( Object.keys(coins).length === total_coins ) {
           let return_value = total_portfolio_value - holdings.invested
           resolve({

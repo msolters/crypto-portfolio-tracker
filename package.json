@@ -9,6 +9,7 @@
   "author": "Mark Solters",
   "license": "MIT",
   "dependencies": {
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "underscore": "^1.8.3"
   }
 }

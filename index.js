@@ -27,8 +27,8 @@ function compute_portfolio() {
         let coin_value = parseFloat(coin_data.price_usd) * holdings.crypto[coin]
         coins[coin_data.symbol].coin_value = coin_value
         total_portfolio_value += coin_value
-        total_portfolio_value += holdings.usd
         if( Object.keys(coins).length === total_coins ) {
+          total_portfolio_value += holdings.usd
           let return_value = total_portfolio_value - holdings.invested
           resolve({
             total: total_portfolio_value,
@@ -51,6 +51,7 @@ setInterval( () => {
     for( let coin of _.sortBy(portfolio.coins, c => c.coin_value) ) {
       console.log(`${coin.symbol}:\t\t$${coin.coin_value.toFixed(2)}`)
     }
+    console.log(`Total:\t\t$${portfolio.total.toFixed(2)}\n`)
     console.log(`Return:\t\t$${portfolio.return.toFixed(2)}\t(${portfolio.performance.toFixed(2)}%)\n`)
   })
   .catch( (error) => {

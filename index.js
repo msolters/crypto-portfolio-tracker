@@ -51,6 +51,7 @@ setInterval( () => {
     for( let coin of _.sortBy(portfolio.coins, c => c.coin_value) ) {
       console.log(`${coin.symbol}:\t\t$${coin.coin_value.toFixed(2)}`)
     }
+    console.log(`Total:\t\t$${portfolio.total.toFixed(2)}\n`)
     console.log(`Return:\t\t$${portfolio.return.toFixed(2)}\t(${portfolio.performance.toFixed(2)}%)\n`)
   })
   .catch( (error) => {
